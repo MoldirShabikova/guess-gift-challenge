@@ -37,15 +37,28 @@
 
 // Example:
 
-// var wishlist = [
-//     {name: "Mini Puzzle", size: "small", clatters: "yes", weight: "light"},
-//     {name: "Toy Car", size: "medium", clatters: "a bit", weight: "medium"},
-//     {name: "Card Game", size: "small", clatters: "no", weight: "light"}
-// ];
+let wishlist = [
+    {name: "Mini Puzzle", size: "small", clatters: "yes", weight: "light"},
+    {name: "Toy Car", size: "medium", clatters: "a bit", weight: "medium"},
+    {name: "Card Game", size: "small", clatters: "no", weight: "light"}
+];
 
-// var presents = [
-//     {size: "medium", clatters: "a bit", weight: "medium"},
-//     {size: "small", clatters: "yes", weight: "light"}
-// ];
+let presents = [
+    {size: "medium", clatters: "a bit", weight: "medium"},
+    {size: "small", clatters: "yes", weight: "light"}
+];
 
-// guessGifts(wishlist, presents); // must return ["Toy Car", "Mini Puzzle"]
+function guessGifts(wishlists, presents){
+    let result =[]
+    for(let i of wishlists){
+        for(let j of presents){
+            if(i.size===j.size && i.clatters === j.clatters && i.weight===j.weight){
+                result.push(i.name)
+            }
+        }
+    }
+    return result
+}
+
+console.log(guessGifts(wishlist, presents)); // must return ["Toy Car", "Mini Puzzle"]
+
